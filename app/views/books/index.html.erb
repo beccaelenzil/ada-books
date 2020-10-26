@@ -1,8 +1,8 @@
 <h1>Books</h1>
 <ul>
-  <% @books.each do |book| %>
+  <% @books.each_with_index do |book, i| %>
     <li>
-      <%= book[:title] %> By: <%= book[:author] %>
+      <%= link_to book[:title], book_path(i) %> By: <%= book[:author] %>
     </li>
   <% end %>
 </ul>
